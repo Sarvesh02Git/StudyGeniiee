@@ -1,0 +1,27 @@
+<div class="upload-container">
+  <h1>📄 Upload Your Notes</h1>
+
+  <!-- File Upload -->
+  <div class="upload-box">
+    <!-- reference variable #fileInput -->
+    <input type="file" #fileInput hidden (change)="onFileSelected($event)" />
+    <button mat-raised-button color="primary" (click)="fileInput.click()">
+      <mat-icon>upload</mat-icon> Select File
+    </button>
+    <p *ngIf="uploadedFileName"><strong>File:</strong> {{ uploadedFileName }}</p>
+  </div>
+
+  <!-- Preview -->
+  <div class="preview-box" *ngIf="filePreview">
+    <h3>Preview</h3>
+    <img *ngIf="filePreview.startsWith('data:image')" [src]="filePreview" alt="Preview" />
+    <p *ngIf="!filePreview.startsWith('data:image')">{{ filePreview }}</p>
+  </div>
+
+  <!-- Actions -->
+  <div class="actions">
+    <button mat-stroked-button color="accent" (click)="generateSummary()">Generate Summary</button>
+    <button mat-stroked-button color="primary" (click)="generateQuiz()">Generate Quiz</button>
+    <button mat-stroked-button color="warn" (click)="generateFlashcards()">Generate Flashcards</button>
+  </div>
+</div>

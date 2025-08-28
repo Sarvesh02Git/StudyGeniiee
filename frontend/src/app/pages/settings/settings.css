@@ -1,0 +1,41 @@
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+.title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  padding: 15px;
+}
+
+.input-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.save-btn {
+  margin-top: 20px;
+  align-self: center;
+}
+
+/* Dark Mode */
+.dark-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-theme mat-card {
+  background: #1e1e1e;
+  color: #fff;
+}

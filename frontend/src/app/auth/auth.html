@@ -1,0 +1,76 @@
+<!-- Full-page gradient background -->
+<div class="page-bg"></div>
+
+<!-- Centered Auth Card -->
+<div class="auth-shell">
+  <div class="container" [class.right-panel-active]="isRegister()">
+
+    <!-- Register -->
+    <div class="form-container sign-up-container">
+      <form [formGroup]="registerForm" (ngSubmit)="submitRegister()">
+        <h1>Create Account</h1>
+
+        <div class="inputs">
+          <input type="text" placeholder="Name" formControlName="name" />
+          <div class="err" *ngIf="registerForm.get('name')?.touched && registerForm.get('name')?.invalid">
+            Name is required
+          </div>
+
+          <input type="email" placeholder="Email" formControlName="email" />
+          <div class="err" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+            Valid email required
+          </div>
+
+          <input type="password" placeholder="Password" formControlName="password" />
+          <div class="err" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+            Min 6 characters
+          </div>
+        </div>
+
+        <button class="solid">Sign Up</button>
+      </form>
+    </div>
+
+    <!-- Login -->
+    <div class="form-container sign-in-container">
+      <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+        <h1>Sign In</h1>
+
+        <div class="inputs">
+          <input type="email" placeholder="Email" formControlName="email" />
+          <div class="err" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+            Valid email required
+          </div>
+
+          <input type="password" placeholder="Password" formControlName="password" />
+          <div class="err" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+            Min 6 characters
+          </div>
+        </div>
+
+        <a class="muted" routerLink="/forgot">Forgot Password?</a>
+        <button class="solid">Login</button>
+      </form>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay-container">
+      <div class="overlay" [class.overlay-active]="isRegister()">
+        <!-- Left panel (visible when in Register mode) -->
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome Back!</h1>
+          <p>To keep connected with us, please login with your personal info.</p>
+          <button class="ghost pink" (click)="toggle('login')">Sign In</button>
+        </div>
+
+        <!-- Right panel (visible in Login mode) -->
+        <div class="overlay-panel overlay-right">
+          <h1>Hello, Friend!</h1>
+          <p>Enter your details and start your journey with StudyGenie.</p>
+          <button class="ghost turquoise" (click)="toggle('register')">Sign Up</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

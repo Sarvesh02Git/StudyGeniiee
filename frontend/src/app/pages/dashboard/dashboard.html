@@ -1,0 +1,31 @@
+<div class="dashboard-container">
+  <h1>Welcome back to StudyGenie ✨</h1>
+
+  <!-- Progress Section -->
+  <section class="progress-section">
+    <h2>Your Progress</h2>
+    <mat-progress-bar mode="determinate" [value]="progressValue"></mat-progress-bar>
+    <p>Study Streak: <strong>{{ studyStreak }} days</strong></p>
+    <p>Knowledge Coverage: <strong>{{ progressValue }}%</strong></p>
+    <p>Last Study: <strong>{{ lastStudyDate }}</strong></p>
+  </section>
+
+  <!-- Quick Actions -->
+  <section class="quick-actions">
+    <h2>Quick Actions</h2>
+    <div class="action-buttons">
+      <button mat-raised-button color="primary" routerLink="/upload">📄 Upload Notes</button>
+      <button mat-raised-button color="accent" (click)="startNewQuiz()">📝 Take Quiz</button>
+      <button mat-raised-button color="warn" routerLink="/flashcards">🎴 Review Flashcards</button>
+      <button mat-raised-button color="secondary" routerLink="/tutor">🤖 Ask AI Tutor</button>
+    </div>
+  </section>
+
+  <!-- Heatmap Placeholder -->
+  <section class="heatmap-section">
+    <h2>Study Heatmap</h2>
+    <p>[Heatmap / Chart Placeholder – to be integrated later]</p>
+    <p>Total Flashcards Reviewed: {{ totalFlashcards }}</p>
+    <p>Completed Quizzes: {{ completedQuizzes }}</p>
+  </section>
+</div>

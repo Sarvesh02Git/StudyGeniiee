@@ -1,0 +1,27 @@
+<div class="tutor-container">
+  <mat-card class="tutor-card">
+    <mat-card-header>
+      <mat-icon>person</mat-icon>
+      <mat-card-title>{{ tutor.name }}</mat-card-title>
+      <mat-card-subtitle>{{ tutor.subject }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ tutor.description }}</p>
+      <p><mat-icon color="accent">star</mat-icon> Rating: {{ tutor.rating }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <h3 class="sessions-title">Available Sessions</h3>
+
+  <div class="sessions">
+    <mat-card class="session-card" *ngFor="let session of sessions">
+      <mat-card-title>{{ session.topic }}</mat-card-title>
+      <mat-card-subtitle>{{ session.date }} — {{ session.time }}</mat-card-subtitle>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="bookSession(session)">
+          Book Now
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

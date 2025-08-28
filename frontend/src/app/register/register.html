@@ -1,0 +1,28 @@
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <div class="auth-body">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"> <!-- <--- Changed (ngSubmit)="onRegister()" to (ngSubmit)="onSubmit()" and removed #regForm="ngForm" -->
+        <h1>Register</h1>
+        <div class="input-field">
+          <input type="email" placeholder="Email" formControlName="email">
+          <div class="err" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+            Valid email required
+          </div>
+        </div>
+        <div class="input-field">
+          <input type="password" placeholder="Password" formControlName="password">
+          <div class="err" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+            Min 6 characters
+          </div>
+        </div>
+        <button type="submit" [disabled]="registerForm.invalid || isLoading" class="auth-button">
+          <span *ngIf="!isLoading">SIGN UP</span>
+          <span *ngIf="isLoading">Registering...</span>
+        </button>
+      </form>
+      <div class="toggle-link">
+        <p>Already have an account? <a routerLink="/login">Sign In</a></p>
+      </div>
+    </div>
+  </div>
+</div>

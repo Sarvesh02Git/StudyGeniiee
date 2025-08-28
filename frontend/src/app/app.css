@@ -1,0 +1,42 @@
+/* Global Navbar Styles */
+.navbar {
+  background: #1e3a8a; 
+  color: white;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+    li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+
+      &.active {
+        border-bottom: 2px solid #facc15;
+      }
+
+      &:hover {
+        color: #facc15;
+      }
+    }
+  }
+}
+
+/* Main content area */
+.main-container {
+  padding: 20px;
+  min-height: calc(100vh - 60px);
+  background: #f3f4f6;
+}

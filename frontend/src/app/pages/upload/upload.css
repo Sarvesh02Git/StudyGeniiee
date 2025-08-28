@@ -1,0 +1,46 @@
+.upload-container {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+
+  h1 {
+    margin-bottom: 25px;
+    color: #1e3a8a;
+  }
+
+  .upload-box {
+    margin-bottom: 20px;
+
+    button {
+      margin-top: 10px;
+    }
+  }
+
+  .preview-box {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px dashed #9ca3af;
+    border-radius: 10px;
+    background: #f9fafb;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+
+    button {
+      min-width: 180px;
+      font-size: 15px;
+    }
+  }
+}

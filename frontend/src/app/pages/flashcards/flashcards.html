@@ -1,0 +1,19 @@
+<div class="container">
+  <h2 class="title">Flashcards</h2>
+
+  <div class="flashcards">
+    <div 
+      class="flashcard" 
+      *ngFor="let card of flashcards" 
+      [class.flipped]="card.flipped"
+      (click)="toggleCard(card)"
+    >
+      <div class="front">
+        <p>{{ card.question }}</p>
+      </div>
+      <div class="back">
+        <p>{{ card.answer }}</p>
+      </div>
+    </div>
+  </div>
+</div>

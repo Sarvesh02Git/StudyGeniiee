@@ -1,0 +1,39 @@
+<div class="container">
+  <h2 class="title">Settings</h2>
+
+  <form (ngSubmit)="saveSettings()" class="settings-form">
+    <!-- Profile Info -->
+    <mat-card class="card">
+      <mat-card-title>Profile</mat-card-title>
+      <mat-card-content>
+        <mat-form-field appearance="outline" class="input-field">
+          <mat-label>Username</mat-label>
+          <input matInput [(ngModel)]="username" name="username">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="input-field">
+          <mat-label>Email</mat-label>
+          <input matInput [(ngModel)]="email" name="email">
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Preferences -->
+    <mat-card class="card">
+      <mat-card-title>Preferences</mat-card-title>
+      <mat-card-content>
+        <mat-slide-toggle [(ngModel)]="darkMode" name="darkMode" (change)="toggleDarkMode()">
+          Dark Mode
+        </mat-slide-toggle>
+        <br>
+        <mat-slide-toggle [(ngModel)]="notifications" name="notifications">
+          Enable Notifications
+        </mat-slide-toggle>
+      </mat-card-content>
+    </mat-card>
+
+    <button mat-raised-button color="primary" type="submit" class="save-btn">
+      Save Settings
+    </button>
+  </form>
+</div>

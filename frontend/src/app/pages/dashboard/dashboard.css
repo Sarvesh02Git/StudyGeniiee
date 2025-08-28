@@ -1,0 +1,68 @@
+.dashboard-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1e3a8a;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #f9fafb;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+    h2 {
+      margin-bottom: 15px;
+      color: #111827; 
+      font-size: 20px;
+    }
+  }
+
+  .progress-section {
+    text-align: center;
+
+    p {
+      margin: 8px 0;
+      font-size: 16px;
+      color: #374151; 
+    }
+  }
+
+  .quick-actions {
+    .action-buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+
+      button {
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 10px;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+          transform: translateY(-3px);
+        }
+      }
+    }
+  }
+
+  .heatmap-section {
+    text-align: center;
+    color: #6b7280;
+    font-style: italic;
+
+    p {
+      margin: 5px 0;
+      font-size: 15px;
+    }
+  }
+}

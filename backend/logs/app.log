@@ -1,0 +1,190 @@
+2025-08-27 20:28:45 [INFO] app: Application starting up...
+2025-08-27 20:28:45 [DEBUG] aiomysql: caching sha2: Trying full auth...
+2025-08-27 20:28:45 [DEBUG] aiomysql: -----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArJ65yXO8Hui1Ro6o4Nz8
+zMQ1wOxHIE4oN4qSLBw0L+bwxxmhko4OBF5JfNEqI7foZKEng+arzuv8ziJObuxt
+bOQEct+3O9NZbwga9rEbI5OPE013G2KcRw6JcT4Bg+24tNeOJxhEtroSlxLx8qE5
+q8c14oTp4yLA5SBkoK9EHCJo7+V4gi4I+QLly09vC1QXeL3/6RVxf8bK040xKhUK
+WTVV6sKHZ+l+VeSLrNphwnQVNY3LB46p3hbg0Wmsw3TYJQTmkeWOuN8zzcTZlDu3
+/8AhcS+fa3dxuJIv6F7CXXU6YqInsIXg+lJ35Tpbw24MQ88Pq9/Usl1iaZ79hs6M
+lQIDAQAB
+-----END PUBLIC KEY-----
+
+2025-08-27 20:29:29 [INFO] app: Application starting up...
+2025-08-27 20:29:29 [DEBUG] aiomysql: caching sha2: succeeded by fast path.
+2025-08-27 20:31:45 [INFO] app: Application starting up...
+2025-08-27 20:31:45 [DEBUG] aiomysql: caching sha2: succeeded by fast path.
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE users (
+	user_id INTEGER NOT NULL AUTO_INCREMENT, 
+	username VARCHAR(50) NOT NULL, 
+	email VARCHAR(100) NOT NULL, 
+	password_hash VARCHAR(255) NOT NULL, 
+	registration_date DATETIME DEFAULT (now()), 
+	PRIMARY KEY (user_id), 
+	UNIQUE (email)
+)
+
+
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: [no key 0.00186s] ()
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: CREATE UNIQUE INDEX ix_users_username ON users (username)
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: [no key 0.00070s] ()
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: CREATE INDEX ix_users_user_id ON users (user_id)
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: [no key 0.00083s] ()
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE documents (
+	document_id INTEGER NOT NULL AUTO_INCREMENT, 
+	user_id INTEGER NOT NULL, 
+	title VARCHAR(255) NOT NULL, 
+	upload_date DATETIME DEFAULT (now()), 
+	file_path VARCHAR(255) NOT NULL, 
+	document_type VARCHAR(50), 
+	PRIMARY KEY (document_id), 
+	FOREIGN KEY(user_id) REFERENCES users (user_id)
+)
+
+
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: [no key 0.00162s] ()
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: CREATE INDEX ix_documents_document_id ON documents (document_id)
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: [no key 0.00065s] ()
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE study_materials (
+	material_id INTEGER NOT NULL AUTO_INCREMENT, 
+	document_id INTEGER NOT NULL, 
+	material_type VARCHAR(50) NOT NULL, 
+	creation_date DATETIME DEFAULT (now()), 
+	PRIMARY KEY (material_id), 
+	FOREIGN KEY(document_id) REFERENCES documents (document_id)
+)
+
+
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: [no key 0.00120s] ()
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: CREATE INDEX ix_study_materials_material_id ON study_materials (material_id)
+2025-08-27 20:31:45 [INFO] sqlalchemy.engine.Engine: [no key 0.00067s] ()
+2025-08-27 20:31:46 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE quizzes (
+	quiz_id INTEGER NOT NULL AUTO_INCREMENT, 
+	material_id INTEGER NOT NULL, 
+	score INTEGER, 
+	completion_date DATETIME, 
+	PRIMARY KEY (quiz_id), 
+	FOREIGN KEY(material_id) REFERENCES study_materials (material_id)
+)
+
+
+2025-08-27 20:31:46 [INFO] sqlalchemy.engine.Engine: [no key 0.00107s] ()
+2025-08-27 20:31:46 [INFO] sqlalchemy.engine.Engine: CREATE INDEX ix_quizzes_quiz_id ON quizzes (quiz_id)
+2025-08-27 20:31:46 [INFO] sqlalchemy.engine.Engine: [no key 0.00087s] ()
+2025-08-27 20:31:46 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE flashcards (
+	flashcard_id INTEGER NOT NULL AUTO_INCREMENT, 
+	material_id INTEGER NOT NULL, 
+	front_text VARCHAR(1000) NOT NULL, 
+	back_text VARCHAR(1000) NOT NULL, 
+	last_reviewed_date DATETIME, 
+	next_review_date DATETIME, 
+	repetition_count INTEGER, 
+	PRIMARY KEY (flashcard_id), 
+	FOREIGN KEY(material_id) REFERENCES study_materials (material_id)
+)
+
+
+2025-08-27 20:31:46 [INFO] sqlalchemy.engine.Engine: [no key 0.00128s] ()
+2025-08-27 20:31:46 [INFO] sqlalchemy.engine.Engine: CREATE INDEX ix_flashcards_flashcard_id ON flashcards (flashcard_id)
+2025-08-27 20:31:46 [INFO] sqlalchemy.engine.Engine: [no key 0.00060s] ()
+2025-08-27 20:31:46 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE quiz_questions (
+	question_id INTEGER NOT NULL AUTO_INCREMENT, 
+	quiz_id INTEGER NOT NULL, 
+	question_text VARCHAR(1000) NOT NULL, 
+	`option_A` VARCHAR(500), 
+	`option_B` VARCHAR(500), 
+	`option_C` VARCHAR(500), 
+	`option_D` VARCHAR(500), 
+	correct_option VARCHAR(10) NOT NULL, 
+	PRIMARY KEY (question_id), 
+	FOREIGN KEY(quiz_id) REFERENCES quizzes (quiz_id)
+)
+
+
+2025-08-27 20:31:46 [INFO] sqlalchemy.engine.Engine: [no key 0.00099s] ()
+2025-08-27 20:31:46 [INFO] sqlalchemy.engine.Engine: CREATE INDEX ix_quiz_questions_question_id ON quiz_questions (question_id)
+2025-08-27 20:31:46 [INFO] sqlalchemy.engine.Engine: [no key 0.00074s] ()
+2025-08-27 20:31:46 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-08-27 20:31:46 [INFO] app: Database tables created or already exist.
+2025-08-27 20:34:35 [INFO] app: Application shutting down...
+2025-08-27 20:34:42 [INFO] app: Application starting up...
+2025-08-27 20:34:42 [DEBUG] aiomysql: caching sha2: succeeded by fast path.
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-27 20:34:42 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-08-27 20:34:42 [INFO] app: Database tables created or already exist.
+2025-08-28 10:48:39 [INFO] app: Application starting up...
+2025-08-28 10:48:39 [DEBUG] aiomysql: caching sha2: Trying full auth...
+2025-08-28 10:48:39 [DEBUG] aiomysql: -----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArJ65yXO8Hui1Ro6o4Nz8
+zMQ1wOxHIE4oN4qSLBw0L+bwxxmhko4OBF5JfNEqI7foZKEng+arzuv8ziJObuxt
+bOQEct+3O9NZbwga9rEbI5OPE013G2KcRw6JcT4Bg+24tNeOJxhEtroSlxLx8qE5
+q8c14oTp4yLA5SBkoK9EHCJo7+V4gi4I+QLly09vC1QXeL3/6RVxf8bK040xKhUK
+WTVV6sKHZ+l+VeSLrNphwnQVNY3LB46p3hbg0Wmsw3TYJQTmkeWOuN8zzcTZlDu3
+/8AhcS+fa3dxuJIv6F7CXXU6YqInsIXg+lJ35Tpbw24MQ88Pq9/Usl1iaZ79hs6M
+lQIDAQAB
+-----END PUBLIC KEY-----
+
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-08-28 10:48:39 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-08-28 10:48:39 [INFO] app: Database tables created or already exist.

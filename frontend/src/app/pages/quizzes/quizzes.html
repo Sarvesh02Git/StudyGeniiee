@@ -1,0 +1,34 @@
+<div class="container">
+  <h2 class="title">Quiz Page</h2>
+
+  <!-- Loop through quizzes -->
+  <mat-card *ngFor="let quiz of quizzes; let i = index" class="quiz-card">
+    <mat-card-header>
+      <mat-card-title>{{ i + 1 }}. {{ quiz.question }}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="options">
+        <button
+          mat-raised-button
+          color="{{ quiz.selectedAnswer === j ? 'primary' : 'accent' }}"
+          *ngFor="let option of quiz.options; let j = index"
+          (click)="selectAnswer(i, j)"
+        >
+          {{ option }}
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Action buttons -->
+  <div class="actions">
+    <button mat-raised-button color="primary" (click)="submitQuiz()">Submit</button>
+    <button mat-raised-button color="warn" (click)="resetQuiz()">Reset</button>
+  </div>
+
+  <!-- Result -->
+  <div *ngIf="score !== null" class="result">
+    <h3>You scored {{ score }} / {{ quizzes.length }}</h3>
+  </div>
+</div>
