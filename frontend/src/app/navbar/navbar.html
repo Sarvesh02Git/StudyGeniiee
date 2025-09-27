@@ -1,11 +1,17 @@
-<nav class="navbar">
-  <h2 class="logo">📘 StudyGenie</h2>
-  <ul class="nav-links">
-    <li><a mat-button routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
-    <li><a mat-button routerLink="/upload" routerLinkActive="active">Upload</a></li>
-    <li><a mat-button routerLink="/quizzes" routerLinkActive="active">Quizzes</a></li>
-    <li><a mat-button routerLink="/flashcards" routerLinkActive="active">Flashcards</a></li>
-    <li><a mat-button routerLink="/tutor" routerLinkActive="active">AI Tutor</a></li>
-    <li><a mat-button routerLink="/settings" routerLinkActive="active">Settings</a></li>
-  </ul>
-</nav>
+<nav class="sidebar-navbar">
+      <div class="logo">
+        <a routerLink="/">StudyGenie</a>
+      </div>
+      <ul class="nav-links">
+        <li><a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Dashboard</a></li>
+        <li><a routerLink="/upload" routerLinkActive="active">Upload</a></li>
+        <li><a routerLink="/quizzes" routerLinkActive="active">Quizzes</a></li>
+        <li><a routerLink="/flashcards" routerLinkActive="active">Flashcards</a></li>
+        <li><a routerLink="/tutor" routerLinkActive="active">AI Tutor</a></li>
+        <li><a routerLink="/settings" routerLinkActive="active">Settings</a></li>
+      </ul>
+      <div class="auth-buttons">
+        <a routerLink="/login" >Login</a>
+        <!-- You might add a logout button here too -->
+      </div>
+    </nav>

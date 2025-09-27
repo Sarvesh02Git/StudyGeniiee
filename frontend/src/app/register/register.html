@@ -1,28 +1,70 @@
 <div class="auth-wrapper">
-  <div class="auth-card">
-    <div class="auth-body">
-      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"> <!-- <--- Changed (ngSubmit)="onRegister()" to (ngSubmit)="onSubmit()" and removed #regForm="ngForm" -->
-        <h1>Register</h1>
-        <div class="input-field">
-          <input type="email" placeholder="Email" formControlName="email">
-          <div class="err" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
-            Valid email required
-          </div>
+<div class="auth-card">
+<div class="auth-header">
+<div class="icon-circle">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="user-icon">
+<path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
+</svg>
+</div>
+</div>
+<div class="auth-body">
+<h1>REGISTER</h1>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="input-field-group">
+      <div class="input-field">
+        <input type="text" placeholder="Fullname" formControlName="fullname">
+        <div class="err" *ngIf="registerForm.get('fullname')?.touched && registerForm.get('fullname')?.invalid">
+          Fullname is required (min 3 chars)
         </div>
-        <div class="input-field">
-          <input type="password" placeholder="Password" formControlName="password">
-          <div class="err" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
-            Min 6 characters
-          </div>
-        </div>
-        <button type="submit" [disabled]="registerForm.invalid || isLoading" class="auth-button">
-          <span *ngIf="!isLoading">SIGN UP</span>
-          <span *ngIf="isLoading">Registering...</span>
-        </button>
-      </form>
-      <div class="toggle-link">
-        <p>Already have an account? <a routerLink="/login">Sign In</a></p>
       </div>
     </div>
+    <div class="input-field-group">
+      <div class="input-field">
+        <input type="text" placeholder="Username" formControlName="username">
+        <div class="err" *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid">
+          Username is required (min 3 chars)
+        </div>
+      </div>
+    </div>
+
+    <div class="input-field-group">
+      <div class="input-field">
+        <input type="email" placeholder="Email" formControlName="email">
+        <div class="err" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+          Valid email required
+        </div>
+      </div>
+    </div>
+    
+    <div class="input-field-group">
+      <div class="input-field">
+        <input type="password" placeholder="Password" formControlName="password">
+        <div class="err" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+          Min 6 characters
+        </div>
+      </div>
+    </div>
+
+    <div class="message-container">
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      <div *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+      </div>
+    </div>
+    
+    <button type="submit" [disabled]="registerForm.invalid || isLoading" class="auth-button">
+      <span *ngIf="!isLoading">REGISTER</span>
+      <span *ngIf="isLoading">Registering...</span>
+    </button>
+  </form>
+  
+  <div class="toggle-link">
+    <p>Already have an account? <a routerLink="/login">Login</a></p>
   </div>
+</div>
+
+</div>
 </div>

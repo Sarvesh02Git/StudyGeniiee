@@ -15,3 +15,10 @@ class Document(Base):
     document_type = Column(String(50))
     
     user = relationship("User", back_populates="documents")
+
+    # Define relationship to study_materials here
+    study_materials = relationship(
+        "StudyMaterial", 
+        back_populates="document", 
+        cascade="all, delete-orphan"
+    )

@@ -1,93 +1,214 @@
-.login-container {
+.auth-wrapper {
+  background: linear-gradient(135deg, #FF69B4 0%, #40E0D0 100%);
+  min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #ff4fa3, #40e0d0);
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box; 
 }
 
-.login-card {
-  background: #fff;
-  padding: 40px;
-  width: 400px;
+.auth-card {
+  background-color: rgba(255, 255, 255, 0.9); 
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; 
+  padding: 30px;
   text-align: center;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.logo {
-  font-size: 26px;
-  font-weight: bold;
-  color: #40e0d0;
+.auth-header {
   margin-bottom: 20px;
 }
 
-form input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 15px;
-}
-
-form button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  background: linear-gradient(135deg, #ff4fa3, #40e0d0);
-  border: none;
-  color: white;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-form button:hover {
-  opacity: 0.9;
-}
-
-.extra-links {
-  margin: 15px 0;
-  font-size: 14px;
-}
-
-.extra-links a {
-  color: #ff4fa3;
-  text-decoration: none;
-}
-
-.social-login {
-  margin-top: 20px;
-}
-
-.social-login p {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.social-buttons {
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  background-color: #f0f4f8; 
+  border-radius: 50%;
+  margin: 0 auto 10px;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  align-items: center;
 }
 
-.social-buttons .google,
-.social-buttons .facebook {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+.user-icon {
+  width: 40px;
+  height: 40px;
+  color: #334e68; 
+}
+
+.auth-body {
+  width: 100%;
+  h1 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #334e68; 
+  }
+}
+
+.input-field-group {
+  margin-bottom: 15px; 
+  width: 100%;
+}
+
+.input-field {
+  position: relative;
+  width: 100%;
+
+  input {
+    width: 100%;
+    padding: 15px 15px; 
+    border: none;
+    border-radius: 10px;
+    background-color: #f0f4f8; 
+    color: #334e68;
+    font-size: 16px;
+    box-sizing: border-box; 
+    outline: none;
+
+    &:focus {
+      box-shadow: 0 0 0 2px #40E0D0; 
+    }
+  }
+
+  .err {
+    text-align: left;
+    font-size: 12px;
+    color: #d43a5e; 
+    margin-top: 4px;
+    padding-left: 5px; 
+  }
+}
+
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
   font-size: 14px;
-  color: #fff;
+  color: #6a7c93; 
+  width: 100%;
 }
 
-.google {
-  background: #db4437;
+.remember-me {
+  display: flex;
+  align-items: center;
+  
+  label {
+    margin-left: 5px;
+  }
 }
 
-.facebook {
-  background: #3b5998;
+.forgot-password,
+.toggle-link a {
+  color: #40E0D0; 
+  text-decoration: none;
+  font-weight: 500;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.auth-button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #FF69B4, #40E0D0); 
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(64, 224, 208, 0.4); 
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-2px); 
+  }
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    box-shadow: none; 
+  }
+}
+
+.social-login-separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: 25px 0;
+  span {
+    padding: 0 10px;
+    color: #6a7c93;
+    font-size: 14px;
+  }
+  hr {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid #e0e0e0;
+  }
+}
+
+.social-login-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; 
+  width: 100%;
+  margin-bottom: 25px; 
+
+  .social-button {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: white;
+    color: #334e68;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #f5f5f5;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    &.google {
+      
+      background-color: #db4437; color: white; border-color: #db4437;
+    }
+    &.facebook {
+      background-color: #4267B2; color: white; border-color: #4267B2;
+    }
+  }
+}
+
+.toggle-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #6a7c93;
+}
+
+@media (max-width: 600px) {
+  .auth-card {
+    padding: 20px;
+    margin: 10px; 
+  }
+  .auth-body h1 {
+    font-size: 20px;
+  }
+  .input-field input, .auth-button, .social-button {
+    padding: 12px;
+    font-size: 14px;
+  }
+  .social-login-buttons {
+    flex-direction: column; 
+  }
 }

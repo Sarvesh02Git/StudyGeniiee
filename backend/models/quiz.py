@@ -1,7 +1,9 @@
+# backend/models/quiz.py
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.sql import func
+from sqlalchemy.orm import relationship # Add this import
 from services.database import Base
-from sqlalchemy.orm import relationship
+
 
 class Quiz(Base):
     __tablename__ = "quizzes"
@@ -11,4 +13,10 @@ class Quiz(Base):
     score = Column(Integer)
     completion_date = Column(DateTime(timezone=True))
     
-    questions = relationship("QuizQuestion", back_populates="quiz")
+    # Define relationships here
+    questions = relationship(
+        "QuizQuestion", 
+        back_populates="quiz", 
+        cascade="all, delete-orphan"
+    )
+    study_material = relationship("StudyMaterial", back_populates="quizzes")

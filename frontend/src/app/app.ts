@@ -1,17 +1,15 @@
+// src/app/app.ts
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
-import { RouterModule } from '@angular/router';
-
-// If you want a navbar here, you can also import Angular Material buttons, etc.
+import { RouterOutlet, RouterModule } from '@angular/router';
+//import { NavbarComponent } from './navbar/navbar'; // <--- This path should be correct if navbar.component.ts is directly inside src/app/navbar/
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatButtonModule,  RouterModule],
+  imports: [RouterOutlet, RouterModule], 
   templateUrl: './app.html',
-  styleUrls: ['./app.css']
+  styleUrls: ['./app.css'] 
 })
-export class App{
+export class App {
   title = 'StudyGenie';
 }

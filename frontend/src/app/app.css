@@ -1,42 +1,41 @@
-/* Global Navbar Styles */
-.navbar {
-  background: #1e3a8a; 
-  color: white;
-  padding: 15px 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  .logo {
-    font-size: 20px;
-    font-weight: bold;
-  }
-
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-
-    li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-
-      &.active {
-        border-bottom: 2px solid #facc15;
-      }
-
-      &:hover {
-        color: #facc15;
-      }
-    }
-  }
+/* src/app/app.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure html and body take full height */
+  overflow: hidden; /* Prevent global scrollbars unless necessary */
+  font-family: 'Inter', sans-serif; /* Ensure font is applied globally */
 }
 
-/* Main content area */
-.main-container {
-  padding: 20px;
-  min-height: calc(100vh - 60px);
-  background: #f3f4f6;
+.app-container {
+  display: flex; /* Use Flexbox for side-by-side layout */
+  height: 100vh; /* Make it exactly 100% of viewport height */
+  background: linear-gradient(135deg, #a73c93 0%, #d493e4 100%); /* Light purple gradient background for the whole app */
+  overflow: hidden; /* Hide any overflow from content within */
+}
+
+.content-area {
+  flex-grow: 1; /* Allow content area to take up remaining space */
+  padding: 20px; /* Add some overall padding to the content area */
+  overflow-y: auto; /* Allow vertical scrolling if content overflows */
+  background-color: #f8fafc; /* A very light, almost white background for the content area */
+  border-top-left-radius: 20px; /* Rounded corner where content meets sidebar */
+  border-bottom-left-radius: 20px;
+  margin-left: -20px; /* Slightly overlap with sidebar to create the rounded corner effect */
+  padding-left: 40px; /* Adjust padding to account for overlap */
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05); /* Subtle shadow on the content area edge */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column; /* Stack sidebar and content vertically on small screens */
+    height: auto; /* Allow height to adjust on mobile */
+  }
+  .content-area {
+    margin-left: 0; /* Remove overlap on mobile */
+    padding-left: 20px; /* Standard padding on mobile */
+    border-radius: 0; /* No rounded corners on mobile */
+    min-height: calc(100vh - var(--navbar-mobile-height, 60px)); /* Ensure content takes remaining height */
+  }
 }

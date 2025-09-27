@@ -1,63 +1,73 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http'; // <--- ADD THIS IMPORT
-import { ApiService } from '../services/api';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient, HttpErrorResponse, HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule, HttpClientModule], // <--- ADD HttpClientModule here
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    RouterModule,
+    HttpClientModule
+  ],
   templateUrl: './register.html',
   styleUrls: ['./register.css']
 })
 export class Register implements OnInit {
-  registerForm: FormGroup;
+  registerForm!: FormGroup;
+  errorMessage: string | null = null;
+  successMessage: string | null = null;
   isLoading = false;
-  error: string | null = null;
 
-  constructor(
-    private fb: FormBuilder,
-    private apiService: ApiService,
-    private router: Router
-  ) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {}
+
+  ngOnInit(): void {
     this.registerForm = this.fb.group({
+      fullname: ['', [Validators.required, Validators.minLength(3)]],
+      username: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
-  ngOnInit(): void {}
-
-  onSubmit(): void {
+  onSubmit() {
     if (this.registerForm.invalid) {
       this.registerForm.markAllAsTouched();
       return;
     }
 
     this.isLoading = true;
-    this.error = null;
-    const { email, password } = this.registerForm.value;
+    this.errorMessage = null;
+    this.successMessage = null;
 
-    // Simulate API call
-    console.log('Register attempt:', { email, password });
-    setTimeout(() => {
-      this.isLoading = false;
-      alert('Registration successful! Please log in.');
-      this.router.navigate(['/login']);
-    }, 1500);
+    const {fullname ,username, email, password } = this.registerForm.value;
 
-    // Uncomment and use this when integrating with actual API
-    // this.apiService.register({ email, password }).subscribe({
-    //   next: () => {
-    //     this.isLoading = false;
-    //     this.router.navigate(['/login']); // Redirect to login after successful registration
-    //   },
-    //   error: (err) => {
-    //     this.isLoading = false;
-    //     this.error = err.error?.detail || 'Registration failed. Please try again.';
-    //   }
-    // });
+    this.http.post('http://127.0.0.1:8000/api/auth/register', { fullname, username, email, password })
+      .subscribe({
+        next: (response: any) => {
+          if (response.message === "User registered successfully.") {
+            this.successMessage = 'Registration successful! You can now log in.';
+            this.registerForm.reset();
+            setTimeout(() => {
+              this.router.navigate(['/login']);
+            }, 8000);
+          } else {
+            this.errorMessage = 'Registration failed. Please try again.';
+          }
+          this.isLoading = false;
+        },
+        error: (error: HttpErrorResponse) => {
+          if (error.status === 409) {
+            this.errorMessage = 'Email is already registered. Please use a different email or log in.';
+          } else {
+            this.errorMessage = 'An unexpected error occurred. Please try again later.';
+          }
+          this.isLoading = false;
+        }
+      });
   }
 }

@@ -4,11 +4,15 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 import uvicorn
 # Import CORSMiddleware
-from fastapi.middleware.cors import CORSMiddleware # <--- Add this import
+from fastapi.middleware.cors import CORSMiddleware
 
 from routers import auth, content, dashboard
 from services.database import create_db_and_tables
 from utils.logger_config import setup_logging
+
+# ADD THESE IMPORTS to ensure SQLAlchemy discovers the models
+from models import user, document, study_material, flashcard, quiz, quiz_question 
+
 
 # Set up logging at the application's entry point
 setup_logging()
@@ -70,9 +74,4 @@ def read_root():
     """
     Returns a simple message to indicate the API is running.
     """
-    logger.info("Root endpoint was accessed.")
-    return {"message": "Welcome to the StudyGenie API!"}
-
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    return {"message": "Welcome to StudyGenie API!"}

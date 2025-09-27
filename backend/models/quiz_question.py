@@ -1,6 +1,8 @@
+# backend/models/quiz_question.py
 from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy.orm import relationship # Add this import
 from services.database import Base
-from sqlalchemy.orm import relationship
+
 
 class QuizQuestion(Base):
     __tablename__ = "quiz_questions"
@@ -14,4 +16,5 @@ class QuizQuestion(Base):
     option_D = Column(String(500))
     correct_option = Column(String(10), nullable=False)
     
+    # Define relationship to quiz here
     quiz = relationship("Quiz", back_populates="questions")

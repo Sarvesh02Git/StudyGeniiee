@@ -1,7 +1,9 @@
 # backend/models/flashcard.py
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.sql import func
+from sqlalchemy.orm import relationship # Add this import
 from services.database import Base
+
 
 class Flashcard(Base):
     __tablename__ = "flashcards"
@@ -13,3 +15,6 @@ class Flashcard(Base):
     last_reviewed_date = Column(DateTime(timezone=True))
     next_review_date = Column(DateTime(timezone=True))
     repetition_count = Column(Integer, default=0)
+
+    # Define relationship to study_material here
+    study_material = relationship("StudyMaterial", back_populates="flashcards")

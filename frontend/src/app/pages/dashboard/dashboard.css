@@ -1,68 +1,174 @@
+
+
+.dashboard-wrapper {
+  background: linear-gradient(-125deg, #E2D2C8 10%, #8E7692 90%); /* Turquoise to Baby Pink */
+  min-height: calc(100vh-64px); /* Assuming navbar height is 64px, adjust if needed */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align content to the top */
+  box-sizing: border-box;
+  width: 100%;
+}
+
 .dashboard-container {
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: linear-gradient(-125deg, #E2D2C8 10%, #8E7692 90%); /* White background for the main card container */
+  border-radius: 20px;
+  /* box-shadow: 0 100px 100px rgb(216, 28, 28); Softer shadow for depth */
+  width: 100%;
+  max-width: 900px; /* Max width for dashboard content */
+  padding: 20px; /* Reduced padding */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Reduced gap between sections */
+}
 
-  h1 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #1e3a8a;
-    font-size: 28px;
-    font-weight: bold;
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a2a47; /* Deep blue for main headings */
+  margin-bottom: 15px; /* Reduced margin */
+}
+
+.welcome-message {
+  font-size: 24px;
+  font-weight: 600;
+  color: #334e68; /* Darker text for welcome message */
+  margin-bottom: 20px; /* Reduced margin */
+}
+
+.progress-section,
+.quick-actions-section,
+.study-heatmap-section {
+  background-color: #f8faff; /* Slightly off-white for sections */
+  border-radius: 15px;
+  padding: 20px; /* Reduced padding */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Lighter shadow for inner sections */
+  text-align: left;
+}
+
+.progress-section h3,
+.quick-actions-section h3,
+.study-heatmap-section h3 {
+  font-size: 20px; /* Slightly reduced font size */
+  font-weight: 600;
+  color: #40E0D0; /* Turquoise for section headings */
+  margin-bottom: 10px; /* Reduced margin */
+}
+
+.progress-details p {
+  font-size: 15px; /* Slightly reduced font size */
+  color: #555;
+  margin-bottom: 6px; /* Reduced margin */
+}
+
+.progress-bar-container {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  height: 8px; /* Slightly reduced height */
+  overflow: hidden;
+  margin-top: 8px; /* Reduced margin */
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, #ffd1dc, #ff9ac0); /* Baby pink gradient for progress */
+  border-radius: 10px;
+  transition: width 0.5s ease-in-out;
+}
+
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Adjusted min width */
+  gap: 15px; /* Reduced gap */
+  margin-top: 15px; /* Reduced margin */
+}
+
+.action-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px; /* Reduced padding */
+  background-color: #e0f7fa; /* Light turquoise background for action buttons */
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: #26a69a; /* Darker teal for button text */
+
+  &:hover {
+    transform: translateY(-3px); /* Slightly less lift on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   }
 
-  section {
-    margin-bottom: 30px;
+  .icon {
+    font-size: 32px; /* Slightly reduced icon size */
+    margin-bottom: 8px; /* Reduced margin */
+    color: #40E0D0; /* Turquoise for icons */
+  }
+  span {
+    font-weight: 600;
+    font-size: 14px; /* Slightly reduced font size */
+  }
+}
+
+.study-heatmap-section {
+  min-height: 150px; /* Reduced placeholder height for chart */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6a7c93; /* Muted text color */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-wrapper {
+    padding: 15px 10px;
+  }
+  .dashboard-container {
     padding: 20px;
-    border-radius: 12px;
-    background: #f9fafb;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-
-    h2 {
-      margin-bottom: 15px;
-      color: #111827; 
-      font-size: 20px;
+    gap: 15px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  .welcome-message {
+    font-size: 20px;
+  }
+  .progress-section h3,
+  .quick-actions-section h3,
+  .study-heatmap-section h3 {
+    font-size: 18px;
+  }
+  .action-button {
+    padding: 10px;
+    .icon {
+      font-size: 28px;
+    }
+    span {
+      font-size: 13px;
     }
   }
+}
 
-  .progress-section {
-    text-align: center;
-
-    p {
-      margin: 8px 0;
-      font-size: 16px;
-      color: #374151; 
-    }
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 10px;
+    gap: 10px;
   }
-
-  .quick-actions {
-    .action-buttons {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
-
-      button {
-        padding: 12px;
-        font-size: 16px;
-        border-radius: 10px;
-        transition: transform 0.2s ease-in-out;
-
-        &:hover {
-          transform: translateY(-3px);
-        }
-      }
-    }
+  h2 {
+    font-size: 22px;
   }
-
-  .heatmap-section {
-    text-align: center;
-    color: #6b7280;
-    font-style: italic;
-
-    p {
-      margin: 5px 0;
-      font-size: 15px;
-    }
+  .welcome-message {
+    font-size: 16px;
+  }
+  .progress-details p {
+    font-size: 14px;
+  }
+  .action-button {
+    min-width: unset; /* Allow buttons to shrink further */
   }
 }
