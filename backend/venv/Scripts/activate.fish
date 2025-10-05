@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV 'D:\my_code_profile\Sunhacks\StudyGenie\backend\venv'
+set -gx VIRTUAL_ENV 'D:\My Projects (GitHub)\StudyGeniiee\backend\venv'
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"Scripts $PATH
