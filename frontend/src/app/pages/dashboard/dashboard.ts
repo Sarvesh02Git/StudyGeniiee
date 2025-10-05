@@ -1,29 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule, DecimalPipe } from '@angular/common'; // <--- Import CommonModule and DecimalPipe
+import { CommonModule, DecimalPipe } from '@angular/common';
 import { ApiService } from '../../services/api';
-import { RouterModule } from '@angular/router'; // Keep RouterModule if you plan to add routerLink later, or remove if not needed.
+import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, DecimalPipe, RouterModule], // <--- Add CommonModule, DecimalPipe, RouterModule
+  imports: [CommonModule, DecimalPipe, RouterModule, RouterLink, RouterLinkActive],
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.css']
 })
 export class DashboardComponent implements OnInit {
-  // Declare properties used in the template
   userProgress: {
     study_streak?: number;
     quizzes_completed?: number;
     average_score?: number;
     total_flashcards_reviewed?: number;
-  } | null = null; // Initialize userProgress to null or an empty object
+  } | null = null;
   
-  loading = true; // Initialize loading state
-  error: string | null = null; // Initialize error state
-
-  // This should come from an authentication service in a real app
-  dummyUserId: number = 1; 
+  loading = true;
+  error: string | null = null;
+  dummyUserId: number = 1;
 
   constructor(private apiService: ApiService) { }
 

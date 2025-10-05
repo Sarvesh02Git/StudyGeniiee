@@ -19,7 +19,7 @@ class UserCreate(BaseModel):
     fullname: str = Field(..., min_length=4, description="Full name of the user")
     username: str = Field(..., min_length=4, max_length=20, description="Username for the user")
     email: EmailStr = Field(..., min_length=6, description="Email address of the user")
-    password: str = Field(..., min_length=8, description="Password for the user")
+    password: str = Field(..., min_length=8, max_length=20, description="Password for the user")
 
     @field_validator('username')
     def username_validation(cls,v):

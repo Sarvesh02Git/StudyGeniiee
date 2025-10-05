@@ -4845,3 +4845,703 @@ FROM users
 WHERE users.email = %s
 2025-09-26 15:12:53 [INFO] sqlalchemy.engine.Engine: [cached since 26.15s ago] ('veshparmar@gmail.com',)
 2025-09-26 15:12:54 [INFO] sqlalchemy.engine.Engine: ROLLBACK
+2025-09-27 21:20:45 [INFO] app: Application starting up...
+2025-09-27 21:20:46 [DEBUG] aiomysql: caching sha2: Trying full auth...
+2025-09-27 21:20:46 [DEBUG] aiomysql: -----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArJ65yXO8Hui1Ro6o4Nz8
+zMQ1wOxHIE4oN4qSLBw0L+bwxxmhko4OBF5JfNEqI7foZKEng+arzuv8ziJObuxt
+bOQEct+3O9NZbwga9rEbI5OPE013G2KcRw6JcT4Bg+24tNeOJxhEtroSlxLx8qE5
+q8c14oTp4yLA5SBkoK9EHCJo7+V4gi4I+QLly09vC1QXeL3/6RVxf8bK040xKhUK
+WTVV6sKHZ+l+VeSLrNphwnQVNY3LB46p3hbg0Wmsw3TYJQTmkeWOuN8zzcTZlDu3
+/8AhcS+fa3dxuJIv6F7CXXU6YqInsIXg+lJ35Tpbw24MQ88Pq9/Usl1iaZ79hs6M
+lQIDAQAB
+-----END PUBLIC KEY-----
+
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-27 21:20:46 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-09-27 21:20:46 [INFO] app: Database tables created or already exist.
+2025-09-27 21:20:48 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-09-27 21:20:48 [INFO] sqlalchemy.engine.Engine: SELECT users.user_id, users.fullname, users.username, users.email, users.password_hash, users.registration_date 
+FROM users 
+WHERE users.email = %s
+2025-09-27 21:20:48 [INFO] sqlalchemy.engine.Engine: [generated in 0.00101s] ('veshparmar@gmail.com',)
+2025-09-27 21:20:48 [WARNING] passlib.handlers.bcrypt: (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-09-27 21:20:48 [DEBUG] passlib.handlers.bcrypt: detected 'bcrypt' backend, version '<unknown>'
+2025-09-27 21:20:48 [DEBUG] passlib.handlers.bcrypt: 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-09-27 21:20:49 [INFO] sqlalchemy.engine.Engine: ROLLBACK
+2025-09-27 21:34:12 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-09-27 21:34:12 [INFO] sqlalchemy.engine.Engine: SELECT users.user_id, users.fullname, users.username, users.email, users.password_hash, users.registration_date 
+FROM users 
+WHERE users.email = %s
+2025-09-27 21:34:12 [INFO] sqlalchemy.engine.Engine: [cached since 803.4s ago] ('veshparmar@gmail.com',)
+2025-09-27 21:34:12 [INFO] sqlalchemy.engine.Engine: ROLLBACK
+2025-09-28 09:30:41 [INFO] app: Application starting up...
+2025-09-28 09:30:41 [DEBUG] aiomysql: caching sha2: Trying full auth...
+2025-09-28 09:30:41 [DEBUG] aiomysql: -----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArJ65yXO8Hui1Ro6o4Nz8
+zMQ1wOxHIE4oN4qSLBw0L+bwxxmhko4OBF5JfNEqI7foZKEng+arzuv8ziJObuxt
+bOQEct+3O9NZbwga9rEbI5OPE013G2KcRw6JcT4Bg+24tNeOJxhEtroSlxLx8qE5
+q8c14oTp4yLA5SBkoK9EHCJo7+V4gi4I+QLly09vC1QXeL3/6RVxf8bK040xKhUK
+WTVV6sKHZ+l+VeSLrNphwnQVNY3LB46p3hbg0Wmsw3TYJQTmkeWOuN8zzcTZlDu3
+/8AhcS+fa3dxuJIv6F7CXXU6YqInsIXg+lJ35Tpbw24MQ88Pq9/Usl1iaZ79hs6M
+lQIDAQAB
+-----END PUBLIC KEY-----
+
+2025-09-28 09:30:41 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-09-28 09:30:41 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-28 09:30:41 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-09-28 09:30:41 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-28 09:30:41 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-09-28 09:30:41 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-28 09:30:41 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-09-28 09:30:41 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-09-28 09:30:41 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-28 09:30:41 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-09-28 09:30:41 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-28 09:30:42 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-09-28 09:30:42 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-28 09:30:42 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-09-28 09:30:42 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-28 09:30:42 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-09-28 09:30:42 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-28 09:30:42 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-09-28 09:30:42 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-28 09:30:42 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-09-28 09:30:42 [INFO] app: Database tables created or already exist.
+2025-09-28 09:31:10 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-09-28 09:31:10 [INFO] sqlalchemy.engine.Engine: SELECT users.user_id, users.fullname, users.username, users.email, users.password_hash, users.registration_date 
+FROM users 
+WHERE users.email = %s
+2025-09-28 09:31:10 [INFO] sqlalchemy.engine.Engine: [generated in 0.00073s] ('veshparmar@gmail.com',)
+2025-09-28 09:31:10 [WARNING] passlib.handlers.bcrypt: (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-09-28 09:31:10 [DEBUG] passlib.handlers.bcrypt: detected 'bcrypt' backend, version '<unknown>'
+2025-09-28 09:31:10 [DEBUG] passlib.handlers.bcrypt: 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-09-28 09:31:11 [INFO] sqlalchemy.engine.Engine: ROLLBACK
+2025-09-28 11:06:56 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-09-28 11:06:56 [INFO] sqlalchemy.engine.Engine: SELECT users.user_id, users.fullname, users.username, users.email, users.password_hash, users.registration_date 
+FROM users 
+WHERE users.email = %s
+2025-09-28 11:06:56 [INFO] sqlalchemy.engine.Engine: [cached since 5746s ago] ('veshparmar@gmail.com',)
+2025-09-28 11:06:56 [INFO] sqlalchemy.engine.Engine: ROLLBACK
+2025-09-28 21:29:48 [INFO] app: Application starting up...
+2025-09-28 21:29:48 [DEBUG] aiomysql: caching sha2: Trying full auth...
+2025-09-28 21:29:48 [DEBUG] aiomysql: -----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArJ65yXO8Hui1Ro6o4Nz8
+zMQ1wOxHIE4oN4qSLBw0L+bwxxmhko4OBF5JfNEqI7foZKEng+arzuv8ziJObuxt
+bOQEct+3O9NZbwga9rEbI5OPE013G2KcRw6JcT4Bg+24tNeOJxhEtroSlxLx8qE5
+q8c14oTp4yLA5SBkoK9EHCJo7+V4gi4I+QLly09vC1QXeL3/6RVxf8bK040xKhUK
+WTVV6sKHZ+l+VeSLrNphwnQVNY3LB46p3hbg0Wmsw3TYJQTmkeWOuN8zzcTZlDu3
+/8AhcS+fa3dxuJIv6F7CXXU6YqInsIXg+lJ35Tpbw24MQ88Pq9/Usl1iaZ79hs6M
+lQIDAQAB
+-----END PUBLIC KEY-----
+
+2025-09-28 21:29:48 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-09-28 21:29:48 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-28 21:29:48 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-09-28 21:29:48 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-28 21:29:48 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-09-28 21:29:48 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-28 21:29:48 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-09-28 21:29:48 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-09-28 21:29:48 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-28 21:29:49 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-09-28 21:29:49 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-28 21:29:49 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-09-28 21:29:49 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-28 21:29:49 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-09-28 21:29:49 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-28 21:29:49 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-09-28 21:29:49 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-28 21:29:49 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-09-28 21:29:49 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-28 21:29:49 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-09-28 21:29:49 [INFO] app: Database tables created or already exist.
+2025-09-29 21:50:42 [INFO] app: Application starting up...
+2025-09-29 21:50:42 [DEBUG] aiomysql: caching sha2: Trying full auth...
+2025-09-29 21:50:42 [DEBUG] aiomysql: -----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArJ65yXO8Hui1Ro6o4Nz8
+zMQ1wOxHIE4oN4qSLBw0L+bwxxmhko4OBF5JfNEqI7foZKEng+arzuv8ziJObuxt
+bOQEct+3O9NZbwga9rEbI5OPE013G2KcRw6JcT4Bg+24tNeOJxhEtroSlxLx8qE5
+q8c14oTp4yLA5SBkoK9EHCJo7+V4gi4I+QLly09vC1QXeL3/6RVxf8bK040xKhUK
+WTVV6sKHZ+l+VeSLrNphwnQVNY3LB46p3hbg0Wmsw3TYJQTmkeWOuN8zzcTZlDu3
+/8AhcS+fa3dxuJIv6F7CXXU6YqInsIXg+lJ35Tpbw24MQ88Pq9/Usl1iaZ79hs6M
+lQIDAQAB
+-----END PUBLIC KEY-----
+
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-29 21:50:43 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-09-29 21:50:43 [INFO] app: Database tables created or already exist.
+2025-09-29 21:50:47 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-09-29 21:50:47 [INFO] sqlalchemy.engine.Engine: SELECT users.user_id, users.fullname, users.username, users.email, users.password_hash, users.registration_date 
+FROM users 
+WHERE users.email = %s
+2025-09-29 21:50:47 [INFO] sqlalchemy.engine.Engine: [generated in 0.00090s] ('veshparmar@gmail.com',)
+2025-09-29 21:50:47 [WARNING] passlib.handlers.bcrypt: (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-09-29 21:50:47 [DEBUG] passlib.handlers.bcrypt: detected 'bcrypt' backend, version '<unknown>'
+2025-09-29 21:50:47 [DEBUG] passlib.handlers.bcrypt: 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-09-29 21:50:47 [INFO] sqlalchemy.engine.Engine: ROLLBACK
+2025-09-30 10:47:21 [INFO] app: Application starting up...
+2025-09-30 10:47:21 [DEBUG] aiomysql: caching sha2: Trying full auth...
+2025-09-30 10:47:21 [DEBUG] aiomysql: -----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArJ65yXO8Hui1Ro6o4Nz8
+zMQ1wOxHIE4oN4qSLBw0L+bwxxmhko4OBF5JfNEqI7foZKEng+arzuv8ziJObuxt
+bOQEct+3O9NZbwga9rEbI5OPE013G2KcRw6JcT4Bg+24tNeOJxhEtroSlxLx8qE5
+q8c14oTp4yLA5SBkoK9EHCJo7+V4gi4I+QLly09vC1QXeL3/6RVxf8bK040xKhUK
+WTVV6sKHZ+l+VeSLrNphwnQVNY3LB46p3hbg0Wmsw3TYJQTmkeWOuN8zzcTZlDu3
+/8AhcS+fa3dxuJIv6F7CXXU6YqInsIXg+lJ35Tpbw24MQ88Pq9/Usl1iaZ79hs6M
+lQIDAQAB
+-----END PUBLIC KEY-----
+
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-09-30 10:47:21 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-09-30 10:47:21 [INFO] app: Database tables created or already exist.
+2025-09-30 10:47:31 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-09-30 10:47:31 [INFO] sqlalchemy.engine.Engine: SELECT users.user_id, users.fullname, users.username, users.email, users.password_hash, users.registration_date 
+FROM users 
+WHERE users.email = %s
+2025-09-30 10:47:31 [INFO] sqlalchemy.engine.Engine: [generated in 0.00064s] ('veshparmar@gmail.com',)
+2025-09-30 10:47:31 [WARNING] passlib.handlers.bcrypt: (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-09-30 10:47:31 [DEBUG] passlib.handlers.bcrypt: detected 'bcrypt' backend, version '<unknown>'
+2025-09-30 10:47:31 [DEBUG] passlib.handlers.bcrypt: 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-09-30 10:47:32 [INFO] sqlalchemy.engine.Engine: ROLLBACK
+2025-09-30 10:47:50 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-09-30 10:47:50 [INFO] sqlalchemy.engine.Engine: SELECT users.user_id, users.fullname, users.username, users.email, users.password_hash, users.registration_date 
+FROM users 
+WHERE users.email = %s
+2025-09-30 10:47:50 [INFO] sqlalchemy.engine.Engine: [cached since 18.65s ago] ('veshparmar@gmail.com',)
+2025-09-30 10:47:50 [INFO] sqlalchemy.engine.Engine: ROLLBACK
+2025-10-01 14:48:39 [INFO] app: Application starting up...
+2025-10-01 14:48:39 [DEBUG] aiomysql: caching sha2: Trying full auth...
+2025-10-01 14:48:39 [DEBUG] aiomysql: -----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArJ65yXO8Hui1Ro6o4Nz8
+zMQ1wOxHIE4oN4qSLBw0L+bwxxmhko4OBF5JfNEqI7foZKEng+arzuv8ziJObuxt
+bOQEct+3O9NZbwga9rEbI5OPE013G2KcRw6JcT4Bg+24tNeOJxhEtroSlxLx8qE5
+q8c14oTp4yLA5SBkoK9EHCJo7+V4gi4I+QLly09vC1QXeL3/6RVxf8bK040xKhUK
+WTVV6sKHZ+l+VeSLrNphwnQVNY3LB46p3hbg0Wmsw3TYJQTmkeWOuN8zzcTZlDu3
+/8AhcS+fa3dxuJIv6F7CXXU6YqInsIXg+lJ35Tpbw24MQ88Pq9/Usl1iaZ79hs6M
+lQIDAQAB
+-----END PUBLIC KEY-----
+
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:48:40 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-10-01 14:48:40 [INFO] app: Database tables created or already exist.
+2025-10-01 14:49:12 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-10-01 14:49:12 [INFO] sqlalchemy.engine.Engine: SELECT users.user_id, users.fullname, users.username, users.email, users.password_hash, users.registration_date 
+FROM users 
+WHERE users.email = %s
+2025-10-01 14:49:12 [INFO] sqlalchemy.engine.Engine: [generated in 0.00071s] ('veshparmar@gmail.com',)
+2025-10-01 14:49:12 [WARNING] passlib.handlers.bcrypt: (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-10-01 14:49:12 [DEBUG] passlib.handlers.bcrypt: detected 'bcrypt' backend, version '<unknown>'
+2025-10-01 14:49:12 [DEBUG] passlib.handlers.bcrypt: 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-10-01 14:49:12 [INFO] sqlalchemy.engine.Engine: ROLLBACK
+2025-10-01 14:57:47 [INFO] app: Application shutting down...
+2025-10-01 14:57:59 [INFO] app: Application starting up...
+2025-10-01 14:57:59 [DEBUG] aiomysql: caching sha2: succeeded by fast path.
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:57:59 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-10-01 14:57:59 [INFO] app: Database tables created or already exist.
+2025-10-01 14:58:11 [INFO] app: Application shutting down...
+2025-10-01 14:58:14 [INFO] app: Application starting up...
+2025-10-01 14:58:14 [DEBUG] aiomysql: caching sha2: succeeded by fast path.
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:58:14 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-10-01 14:58:14 [INFO] app: Database tables created or already exist.
+2025-10-01 14:58:14 [INFO] app: Application shutting down...
+2025-10-01 14:58:16 [INFO] app: Application starting up...
+2025-10-01 14:58:16 [DEBUG] aiomysql: caching sha2: succeeded by fast path.
+2025-10-01 14:58:16 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-10-01 14:58:16 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:58:16 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-10-01 14:58:16 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:58:16 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-10-01 14:58:16 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:58:16 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-10-01 14:58:16 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-10-01 14:58:16 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:58:16 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-10-01 14:58:16 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:58:17 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-10-01 14:58:17 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:58:17 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-10-01 14:58:17 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:58:17 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-10-01 14:58:17 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:58:17 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-10-01 14:58:17 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-01 14:58:17 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-10-01 14:58:17 [INFO] app: Database tables created or already exist.
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_begin with no data
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_header_field with data[42:61]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_header_value with data[63:119]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_header_end with no data
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_header_field with data[121:133]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_header_value with data[135:150]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_header_end with no data
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_headers_finished with no data
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[154:16384]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:180224]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:49152]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:65536]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:65536]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-01 15:01:30 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:49152]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:49152]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:65536]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:65536]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:212992]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:245760]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:65536]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:65536]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:65536]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:29066]
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_part_end with no data
+2025-10-01 15:01:31 [DEBUG] python_multipart.multipart: Calling on_end with no data
+2025-10-01 15:18:34 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-10-01 15:18:34 [INFO] sqlalchemy.engine.Engine: ROLLBACK
+2025-10-03 21:28:53 [INFO] app: Application starting up...
+2025-10-03 21:28:53 [DEBUG] aiomysql: caching sha2: Trying full auth...
+2025-10-03 21:28:53 [DEBUG] aiomysql: -----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArJ65yXO8Hui1Ro6o4Nz8
+zMQ1wOxHIE4oN4qSLBw0L+bwxxmhko4OBF5JfNEqI7foZKEng+arzuv8ziJObuxt
+bOQEct+3O9NZbwga9rEbI5OPE013G2KcRw6JcT4Bg+24tNeOJxhEtroSlxLx8qE5
+q8c14oTp4yLA5SBkoK9EHCJo7+V4gi4I+QLly09vC1QXeL3/6RVxf8bK040xKhUK
+WTVV6sKHZ+l+VeSLrNphwnQVNY3LB46p3hbg0Wmsw3TYJQTmkeWOuN8zzcTZlDu3
+/8AhcS+fa3dxuJIv6F7CXXU6YqInsIXg+lJ35Tpbw24MQ88Pq9/Usl1iaZ79hs6M
+lQIDAQAB
+-----END PUBLIC KEY-----
+
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:28:53 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-10-03 21:28:53 [INFO] app: Database tables created or already exist.
+2025-10-03 21:36:58 [INFO] app: Received registration request for email: officalsarveshp@gmail.com
+2025-10-03 21:36:58 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-10-03 21:36:59 [INFO] sqlalchemy.engine.Engine: SELECT users.user_id, users.fullname, users.username, users.email, users.password_hash, users.registration_date 
+FROM users 
+WHERE users.email = %s
+2025-10-03 21:36:59 [INFO] sqlalchemy.engine.Engine: [generated in 0.00120s] ('officalsarveshp@gmail.com',)
+2025-10-03 21:36:59 [WARNING] passlib.handlers.bcrypt: (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-10-03 21:36:59 [DEBUG] passlib.handlers.bcrypt: detected 'bcrypt' backend, version '<unknown>'
+2025-10-03 21:36:59 [DEBUG] passlib.handlers.bcrypt: 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-10-03 21:36:59 [INFO] sqlalchemy.engine.Engine: INSERT INTO users (fullname, username, email, password_hash) VALUES (%s, %s, %s, %s)
+2025-10-03 21:36:59 [INFO] sqlalchemy.engine.Engine: [generated in 0.00067s] ('Sarvesh Parmar', 'Sarvesh27', 'officalsarveshp@gmail.com', '$2b$12$KjAnrX3FXSJ1j3e815Y0TudPcaoi9MGkF/db3Ah4YRCyyrDdR/7qK')
+2025-10-03 21:36:59 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-10-03 21:36:59 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-10-03 21:36:59 [INFO] sqlalchemy.engine.Engine: SELECT users.user_id, users.fullname, users.username, users.email, users.password_hash, users.registration_date 
+FROM users 
+WHERE users.user_id = %s
+2025-10-03 21:36:59 [INFO] sqlalchemy.engine.Engine: [generated in 0.00096s] (3,)
+2025-10-03 21:36:59 [INFO] app: User registered successfully. User ID: 3
+2025-10-03 21:36:59 [INFO] sqlalchemy.engine.Engine: ROLLBACK
+2025-10-03 21:38:39 [INFO] app: Application shutting down...
+2025-10-03 21:38:48 [INFO] app: Application starting up...
+2025-10-03 21:38:48 [DEBUG] aiomysql: caching sha2: succeeded by fast path.
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:48 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-10-03 21:38:48 [INFO] app: Database tables created or already exist.
+2025-10-03 21:38:51 [INFO] app: Application shutting down...
+2025-10-03 21:38:55 [INFO] app: Application starting up...
+2025-10-03 21:38:55 [DEBUG] aiomysql: caching sha2: succeeded by fast path.
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:55 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-10-03 21:38:55 [INFO] app: Database tables created or already exist.
+2025-10-03 21:38:56 [INFO] app: Application shutting down...
+2025-10-03 21:38:58 [INFO] app: Application starting up...
+2025-10-03 21:38:58 [DEBUG] aiomysql: caching sha2: succeeded by fast path.
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:58 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-10-03 21:38:58 [INFO] app: Database tables created or already exist.
+2025-10-03 21:38:59 [INFO] app: Application starting up...
+2025-10-03 21:38:59 [DEBUG] aiomysql: caching sha2: succeeded by fast path.
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:38:59 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-10-03 21:38:59 [INFO] app: Database tables created or already exist.
+2025-10-03 21:39:02 [INFO] app: Application shutting down...
+2025-10-03 21:39:04 [INFO] app: Application starting up...
+2025-10-03 21:39:04 [DEBUG] aiomysql: caching sha2: succeeded by fast path.
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:39:04 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-10-03 21:39:04 [INFO] app: Database tables created or already exist.
+2025-10-03 21:39:05 [INFO] app: Application shutting down...
+2025-10-03 21:39:07 [INFO] app: Application starting up...
+2025-10-03 21:39:07 [DEBUG] aiomysql: caching sha2: succeeded by fast path.
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-03 21:39:07 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-10-03 21:39:07 [INFO] app: Database tables created or already exist.
+2025-10-03 21:40:01 [INFO] app: Received registration request for email: officalsarveshp@gmail.com
+2025-10-03 21:40:01 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-10-03 21:40:01 [INFO] sqlalchemy.engine.Engine: SELECT users.user_id, users.fullname, users.username, users.email, users.password_hash, users.registration_date 
+FROM users 
+WHERE users.email = %s
+2025-10-03 21:40:01 [INFO] sqlalchemy.engine.Engine: [generated in 0.00079s] ('officalsarveshp@gmail.com',)
+2025-10-03 21:40:01 [WARNING] passlib.handlers.bcrypt: (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-10-03 21:40:01 [DEBUG] passlib.handlers.bcrypt: detected 'bcrypt' backend, version '<unknown>'
+2025-10-03 21:40:01 [DEBUG] passlib.handlers.bcrypt: 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-10-03 21:40:02 [INFO] sqlalchemy.engine.Engine: INSERT INTO users (fullname, username, email, password_hash) VALUES (%s, %s, %s, %s)
+2025-10-03 21:40:02 [INFO] sqlalchemy.engine.Engine: [generated in 0.00073s] ('Sarvesh Parmar', 'Sarvesh27', 'officalsarveshp@gmail.com', '$2b$12$bwgHMgwjneVFsifR.1jrh.Bp/oPFqdvLGGZ57WOwFXmCCYm5IMI3.')
+2025-10-03 21:40:02 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-10-03 21:40:02 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-10-03 21:40:02 [INFO] sqlalchemy.engine.Engine: SELECT users.user_id, users.fullname, users.username, users.email, users.password_hash, users.registration_date 
+FROM users 
+WHERE users.user_id = %s
+2025-10-03 21:40:02 [INFO] sqlalchemy.engine.Engine: [generated in 0.00067s] (4,)
+2025-10-03 21:40:02 [INFO] app: User registered successfully. User ID: 4
+2025-10-03 21:40:02 [INFO] sqlalchemy.engine.Engine: ROLLBACK
+2025-10-03 21:56:00 [INFO] app: Application shutting down...
+2025-10-04 14:11:26 [INFO] app: Application starting up...
+2025-10-04 14:11:28 [DEBUG] aiomysql: caching sha2: succeeded by fast path.
+2025-10-04 14:11:28 [INFO] sqlalchemy.engine.Engine: SELECT DATABASE()
+2025-10-04 14:11:28 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-04 14:11:28 [INFO] sqlalchemy.engine.Engine: SELECT @@sql_mode
+2025-10-04 14:11:28 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-04 14:11:28 [INFO] sqlalchemy.engine.Engine: SELECT @@lower_case_table_names
+2025-10-04 14:11:28 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-04 14:11:28 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2025-10-04 14:11:28 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`users`
+2025-10-04 14:11:28 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-04 14:11:29 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`documents`
+2025-10-04 14:11:29 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-04 14:11:29 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quizzes`
+2025-10-04 14:11:29 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-04 14:11:29 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`quiz_questions`
+2025-10-04 14:11:29 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-04 14:11:29 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`study_materials`
+2025-10-04 14:11:29 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-04 14:11:29 [INFO] sqlalchemy.engine.Engine: DESCRIBE `studygenie_db`.`flashcards`
+2025-10-04 14:11:29 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2025-10-04 14:11:29 [INFO] sqlalchemy.engine.Engine: COMMIT
+2025-10-04 14:11:29 [INFO] app: Database tables created or already exist.
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_begin with no data
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_header_field with data[42:61]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_header_value with data[63:119]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_header_end with no data
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_header_field with data[121:133]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_header_value with data[135:150]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_header_end with no data
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_headers_finished with no data
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[154:65536]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:196608]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:49152]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:49152]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:49152]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:65536]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:65536]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:16384]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:262144]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:147456]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:65536]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:32768]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:49152]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:65536]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:49152]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_data with data[0:12682]
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_part_end with no data
+2025-10-04 14:14:26 [DEBUG] python_multipart.multipart: Calling on_end with no data

@@ -1,55 +1,72 @@
-<div class="dashboard-wrapper">
-  <div class="dashboard-container">
-    <h2 class="welcome-message">Welcome back to StudyGenie ✨</h2>
+<div class="app-container">
+  <nav class="sidebar-navbar">
+    <div class="logo">
+      <a routerLink="/">StudyGenie</a>
+    </div>
+    <ul class="nav-links">
+      <li><a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Dashboard</a></li>
+      <li><a routerLink="/upload" routerLinkActive="active">Upload</a></li>
+      <li><a routerLink="/quizzes" routerLinkActive="active">Quizzes</a></li>
+      <li><a routerLink="/flashcards" routerLinkActive="active">Flashcards</a></li>
+      <li><a routerLink="/tutor" routerLinkActive="active">AI Tutor</a></li>
+      <li><a routerLink="/settings" routerLinkActive="active">Settings</a></li>
+    </ul>
+    <div class="auth-buttons">
+      <a routerLink="/login" class="login-button">Login</a>
+    </div>
+  </nav>
 
-    <div class="progress-section">
-      <h3>Your Progress</h3>
-      <div class="progress-details">
-        <p>Study Streak: <strong>{{ userProgress?.study_streak || 0 }} days</strong></p>
-        <p>Quizzes Completed: <strong>{{ userProgress?.quizzes_completed || 0 }}</strong></p>
-        <p>Average Score: <strong>{{ userProgress?.average_score | number:'1.0-2' }}%</strong></p>
-        <div class="progress-bar-container">
-          <div class="progress-bar" [style.width.%]="userProgress?.average_score || 0"></div>
+  <main class="content-area">
+    <div class="dashboard-wrapper">
+      <div class="dashboard-container">
+
+        <h2 class="welcome-message">Welcome back to StudyGenie ✨</h2>
+
+        <div class="dashboard-card">
+          <h3 class="dashboard-card-title">Your Progress</h3>
+          <div class="progress-section">
+            <div class="progress-card">
+              <div class="progress-value">{{ userProgress?.quizzes_completed || 0 }}/15</div>
+              <div class="progress-label">Quizzes</div>
+            </div>
+            <div class="progress-card">
+              <div class="progress-value">{{ userProgress?.study_streak || 0 }}</div>
+              <div class="progress-label">Study Streak</div>
+            </div>
+            <div class="progress-card">
+              <div class="progress-value">{{ userProgress?.average_score | number:'1.0-2' }}%</div>
+              <div class="progress-label">Average Score</div>
+            </div>
+          </div>
         </div>
+
+        <div class="dashboard-card">
+          <h3 class="dashboard-card-title">Quick Uploads</h3>
+          <div class="quick-uploads-section">
+            <button class="action-button">Upload Notes</button>
+            <button class="action-button">AI Tutor</button>
+          </div>
+        </div>
+
+        <div class="dashboard-card">
+          <h3 class="dashboard-card-title">Previous Uploads</h3>
+          <div class="previous-uploads">
+            <div class="upload-card">Notes 1</div>
+            <div class="upload-card">Notes 2</div>
+            <div class="upload-card">Notes 3</div>
+            <a class="more-link">More...</a>
+          </div>
+        </div>
+
+        <div *ngIf="loading" class="text-center text-white mt-5">
+          Loading progress...
+        </div>
+
+        <div *ngIf="error" class="p-4 bg-red-800 text-white rounded-lg text-center mt-5">
+          Error: {{ error }}
+        </div>
+
       </div>
     </div>
-
-    <div class="quick-actions-section">
-      <h3>Quick Actions</h3>
-      <div class="quick-actions-grid">
-        <button class="action-button">
-          <span class="icon">📝</span> <!-- Example icon -->
-          <span>Upload Notes</span>
-        </button>
-        <button class="action-button">
-          <span class="icon">📚</span>
-          <span>Take Quiz</span>
-        </button>
-        <button class="action-button">
-          <span class="icon">🧠</span>
-          <span>Review Flashcards</span>
-        </button>
-        <button class="action-button">
-          <span class="icon">🤖</span>
-          <span>Ask AI Tutor</span>
-        </button>
-      </div>
-    </div>
-
-    <div class="study-heatmap-section">
-      <h3>Study Heatmap</h3>
-      <p>[Heatmap / Chart Placeholder - to be integrated later]</p>
-      <!-- Example content for study heatmap -->
-      <p>Total Flashcards Reviewed: <span>{{ userProgress?.total_flashcards_reviewed || 0 }}</span></p>
-    </div>
-
-    <div *ngIf="loading" class="text-center text-gray-600 mt-5">
-      <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-green mx-auto mb-3"></div>
-      Loading progress...
-    </div>
-
-    <div *ngIf="error" class="p-4 bg-red-100 text-red-700 rounded-lg text-center mt-5">
-      Error: {{ error }}
-    </div>
-  </div>
+  </main>
 </div>
